@@ -2,6 +2,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>JavaScript S10 tracking numbers generator and checker</title>
+<style>
+body { margin: auto; text-align: center; margin-top: 5%; }
+</style>
 <script language="javascript">
 var services = {
 	'China Post':['CN',['RH','RS']],
@@ -381,7 +384,7 @@ Country Code: <input id="cc" type="text" value="US" size=2/>
 Service Indicator: <input id="si" type="text" value="RA" size=2/>
 Quantity: <input id="n" type="text" value="15" size=3/>
 <button onclick="generate()">Generate</button>
+<button onclick="verify()">Verify</button>
 <p><textarea cols=100 rows=16 id="textarea" autofocus></textarea>
-<p><button onclick="verify()">Verify</button>
 <p><div id="info"></div>
 </body>
