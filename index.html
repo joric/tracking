@@ -378,51 +378,32 @@ function load() {
 
 </script>
 <body onload="load()">
-
 <header class="w3-container">
-<h1>Tracking numbers generator and checker</h1>
-<p class="w3-large">This JavaScript project generates and verifies <a href="https://en.wikipedia.org/wiki/S10_(UPU_standard)">UPU S10</a> numbers used for tracking certain mail</p>
+  <h1>Tracking numbers generator and checker</h1>
+  <p class="w3-large">This JavaScript project generates and verifies <a href="https://en.wikipedia.org/wiki/S10_(UPU_standard)">UPU S10</a> numbers used for tracking certain mail</p>
 </header>
-
 <div class="w3-row">
-
-<div class="w3-col m4 l3"><p>
+  <div class="w3-col m4 l3">
+    <div class="w3-container">
+      Service: <select class="w3-select" id="services" onchange="select()"></select>
+      Country Code: <input class="w3-input" id="cc" type="text" value="US" size=2/>
+      Service Indicator: <input class="w3-input" id="si" type="text" value="RA" size=2/>
+      Quantity: <input class="w3-input" id="n" type="text" value="10" size=3/>
+      <p><button class="w3-btn w3-block w3-red" onclick="generate()">Generate</button></p>
+      <p><button class="w3-btn w3-block w3-green" onclick="verify()">Verify</button></p>
+    </div>
+  </div>
+  <div class="w3-col m8 l9">
+    <div class="w3-container"><textarea class="w3-input w3-border" id="textarea" cols=30 rows=15 autofocus></textarea></div>
+  </div>
+</div>
 
 <div class="w3-container">
-Service: <select class="w3-select" id="services" onchange="select()"></select>
-Country Code: <input class="w3-input" id="cc" type="text" value="US" size=2/>
-Service Indicator: <input class="w3-input" id="si" type="text" value="RA" size=2/>
-Quantity: <input class="w3-input" id="n" type="text" value="10" size=3/>
+  <div id="verify" class="w3-panel w3-green w3-display-container" style="display:none">
+    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+    <h3>Verify</h3>
+    <p id="info"></p>
+  </div>
 </div>
-
-</p></div>
-
-<div class="w3-col  m8 l9"><p>
-
-<div class="w3-container">
-
-<p><button class="w3-btn w3-red" onclick="generate()">Generate</button></p>
-
-<textarea class="w3-input w3-border" id="textarea" cols=30 rows=11 autofocus></textarea>
-
-<p><button class="w3-btn w3-green" onclick="verify()">Verify</button></p>
-
-<div id="verify" class="w3-panel w3-green w3-display-container" style="display:none">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-  <h3>Verify</h3>
-  <p id="info"></p>
-</div>
-
-
-</div>
-
-</p></div>
-
-</div>
-
-
-
-
 
 </body>
-
