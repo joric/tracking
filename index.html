@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Tracking numbers generator and checker</title>
-<style>
-body { margin: auto; text-align: center; margin-top: 5%; }
-</style>
+
 <script language="javascript">
 var services = {
 	'China Post':['CN',['RH','RS']],
@@ -338,10 +338,11 @@ function verify() {
 				var cName = getCountryName(cc);
 				info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
 			}
-			out += s + ' <a target=_blank href="#'+s+'">'+(error ? '<span style="color:red">'+error+'</span>' : 'Checksum OK') + '</a> '+info+'<br/>\n';
+			out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
 		}
 	}
 	document.getElementById("info").innerHTML = out;
+	document.getElementById("verify").style.display = 'inherit';
 }
 
 function generate() {
@@ -377,14 +378,51 @@ function load() {
 
 </script>
 <body onload="load()">
+
+<header class="w3-container">
 <h1>Tracking numbers generator and checker</h1>
-<p>This page generates and verifies <a href="https://en.wikipedia.org/wiki/S10_(UPU_standard)">UPU S10</a> numbers which is what the USPS uses for tracking certain mail.</p>
-Service: <select id="services" onchange="select()"></select>
-Country Code: <input id="cc" type="text" value="US" size=2/>
-Service Indicator: <input id="si" type="text" value="RA" size=2/>
-Quantity: <input id="n" type="text" value="15" size=3/>
-<button onclick="generate()">Generate</button>
-<button onclick="verify()">Verify</button>
-<p><textarea cols=100 rows=16 id="textarea" autofocus></textarea>
-<p><div id="info"></div>
+<p class="w3-large">This JavaScript project generates and verifies <a href="https://en.wikipedia.org/wiki/S10_(UPU_standard)">UPU S10</a> numbers used for tracking certain mail</p>
+</header>
+
+<div class="w3-row">
+
+<div class="w3-col m4 l3"><p>
+
+<div class="w3-container">
+Service: <select class="w3-select" id="services" onchange="select()"></select>
+Country Code: <input class="w3-input" id="cc" type="text" value="US" size=2/>
+Service Indicator: <input class="w3-input" id="si" type="text" value="RA" size=2/>
+Quantity: <input class="w3-input" id="n" type="text" value="10" size=3/>
+</div>
+
+</p></div>
+
+<div class="w3-col  m8 l9"><p>
+
+<div class="w3-container">
+
+<p><button class="w3-btn w3-red" onclick="generate()">Generate</button></p>
+
+<textarea class="w3-input w3-border" id="textarea" cols=30 rows=11 autofocus></textarea>
+
+<p><button class="w3-btn w3-green" onclick="verify()">Verify</button></p>
+
+<div id="verify" class="w3-panel w3-green w3-display-container" style="display:none">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+  <h3>Verify</h3>
+  <p id="info"></p>
+</div>
+
+
+</div>
+
+</p></div>
+
+</div>
+
+
+
+
+
 </body>
+
