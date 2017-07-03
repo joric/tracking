@@ -318,6 +318,7 @@ function gen_fake_serial() {
 function verify() {
 	var lines = document.getElementById("textarea").value.split('\n');
 	var out = '';
+	var errors = 0;
 	for (var i=0; i<lines.length; i++) {
 		s = lines[i];
 		if (s) {
@@ -339,10 +340,13 @@ function verify() {
 				info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
 			}
 			out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
+			if (error) errors++;
 		}
 	}
 	document.getElementById("info").innerHTML = out;
-	document.getElementById("verify").style.display = 'inherit';
+	var e = document.getElementById("verify");
+	e.style.display = 'inherit';
+	e.className = e.className.replace( /red|green/g, errors ? 'red':'green');
 }
 
 function generate() {
@@ -399,7 +403,7 @@ function load() {
       Service Indicator: <input class="w3-input" id="si" type="text" value="RA" size=2/>
       Quantity: <input class="w3-input" id="n" type="text" value="10" size=3/>
       <p><button class="w3-btn w3-block w3-red" onclick="generate()">Generate</button></p>
-      <p><button class="w3-btn w3-block w3-green" onclick="verify()">Verify</button></p>
+      <p><button class="w3-btn w3-block w3-blue" onclick="verify()">Verify</button></p>
     </div>
   </div>
   <div class="w3-col m8 l9">
