@@ -382,6 +382,15 @@ function load() {
   <h1>Tracking numbers generator and checker</h1>
   <p class="w3-large">This JavaScript project generates and verifies <a href="https://en.wikipedia.org/wiki/S10_(UPU_standard)">UPU S10</a> numbers used for tracking certain mail</p>
 </header>
+
+<div class="w3-container">
+  <div id="verify" class="w3-panel w3-green w3-display-container" style="display:none">
+    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+    <h3>Verify</h3>
+    <p id="info"></p>
+  </div>
+</div>
+
 <div class="w3-row">
   <div class="w3-col m4 l3">
     <div class="w3-container">
@@ -395,14 +404,6 @@ function load() {
   </div>
   <div class="w3-col m8 l9">
     <div class="w3-container"><textarea class="w3-input w3-border" id="textarea" cols=30 rows=15 autofocus></textarea></div>
-  </div>
-</div>
-
-<div class="w3-container">
-  <div id="verify" class="w3-panel w3-green w3-display-container" style="display:none">
-    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-    <h3>Verify</h3>
-    <p id="info"></p>
   </div>
 </div>
 
