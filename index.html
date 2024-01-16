@@ -7,377 +7,377 @@
 
 <script language="javascript">
 var services = {
-	'China Post':['CN',['RH','RS']],
-	'USPS':['US',['RA','EA']],
-	'ePacket':['CN',['LM']],
+  'China Post':['CN',['RH','RS']],
+  'USPS':['US',['RA','EA']],
+  'ePacket':['CN',['LM']],
 };
 
 var isoCountries = {
-	'AF' : 'Afghanistan',
-	'AX' : 'Aland Islands',
-	'AL' : 'Albania',
-	'DZ' : 'Algeria',
-	'AS' : 'American Samoa',
-	'AD' : 'Andorra',
-	'AO' : 'Angola',
-	'AI' : 'Anguilla',
-	'AQ' : 'Antarctica',
-	'AG' : 'Antigua And Barbuda',
-	'AR' : 'Argentina',
-	'AM' : 'Armenia',
-	'AW' : 'Aruba',
-	'AU' : 'Australia',
-	'AT' : 'Austria',
-	'AZ' : 'Azerbaijan',
-	'BS' : 'Bahamas',
-	'BH' : 'Bahrain',
-	'BD' : 'Bangladesh',
-	'BB' : 'Barbados',
-	'BY' : 'Belarus',
-	'BE' : 'Belgium',
-	'BZ' : 'Belize',
-	'BJ' : 'Benin',
-	'BM' : 'Bermuda',
-	'BT' : 'Bhutan',
-	'BO' : 'Bolivia',
-	'BA' : 'Bosnia And Herzegovina',
-	'BW' : 'Botswana',
-	'BV' : 'Bouvet Island',
-	'BR' : 'Brazil',
-	'IO' : 'British Indian Ocean Territory',
-	'BN' : 'Brunei Darussalam',
-	'BG' : 'Bulgaria',
-	'BF' : 'Burkina Faso',
-	'BI' : 'Burundi',
-	'KH' : 'Cambodia',
-	'CM' : 'Cameroon',
-	'CA' : 'Canada',
-	'CV' : 'Cape Verde',
-	'KY' : 'Cayman Islands',
-	'CF' : 'Central African Republic',
-	'TD' : 'Chad',
-	'CL' : 'Chile',
-	'CN' : 'China',
-	'CX' : 'Christmas Island',
-	'CC' : 'Cocos (Keeling) Islands',
-	'CO' : 'Colombia',
-	'KM' : 'Comoros',
-	'CG' : 'Congo',
-	'CD' : 'Congo, Democratic Republic',
-	'CK' : 'Cook Islands',
-	'CR' : 'Costa Rica',
-	'CI' : 'Cote D\'Ivoire',
-	'HR' : 'Croatia',
-	'CU' : 'Cuba',
-	'CY' : 'Cyprus',
-	'CZ' : 'Czech Republic',
-	'DK' : 'Denmark',
-	'DJ' : 'Djibouti',
-	'DM' : 'Dominica',
-	'DO' : 'Dominican Republic',
-	'EC' : 'Ecuador',
-	'EG' : 'Egypt',
-	'SV' : 'El Salvador',
-	'GQ' : 'Equatorial Guinea',
-	'ER' : 'Eritrea',
-	'EE' : 'Estonia',
-	'ET' : 'Ethiopia',
-	'FK' : 'Falkland Islands (Malvinas)',
-	'FO' : 'Faroe Islands',
-	'FJ' : 'Fiji',
-	'FI' : 'Finland',
-	'FR' : 'France',
-	'GF' : 'French Guiana',
-	'PF' : 'French Polynesia',
-	'TF' : 'French Southern Territories',
-	'GA' : 'Gabon',
-	'GM' : 'Gambia',
-	'GE' : 'Georgia',
-	'DE' : 'Germany',
-	'GH' : 'Ghana',
-	'GI' : 'Gibraltar',
-	'GR' : 'Greece',
-	'GL' : 'Greenland',
-	'GD' : 'Grenada',
-	'GP' : 'Guadeloupe',
-	'GU' : 'Guam',
-	'GT' : 'Guatemala',
-	'GG' : 'Guernsey',
-	'GN' : 'Guinea',
-	'GW' : 'Guinea-Bissau',
-	'GY' : 'Guyana',
-	'HT' : 'Haiti',
-	'HM' : 'Heard Island & Mcdonald Islands',
-	'VA' : 'Holy See (Vatican City State)',
-	'HN' : 'Honduras',
-	'HK' : 'Hong Kong',
-	'HU' : 'Hungary',
-	'IS' : 'Iceland',
-	'IN' : 'India',
-	'ID' : 'Indonesia',
-	'IR' : 'Iran, Islamic Republic Of',
-	'IQ' : 'Iraq',
-	'IE' : 'Ireland',
-	'IM' : 'Isle Of Man',
-	'IL' : 'Israel',
-	'IT' : 'Italy',
-	'JM' : 'Jamaica',
-	'JP' : 'Japan',
-	'JE' : 'Jersey',
-	'JO' : 'Jordan',
-	'KZ' : 'Kazakhstan',
-	'KE' : 'Kenya',
-	'KI' : 'Kiribati',
-	'KR' : 'Korea',
-	'KW' : 'Kuwait',
-	'KG' : 'Kyrgyzstan',
-	'LA' : 'Lao People\'s Democratic Republic',
-	'LV' : 'Latvia',
-	'LB' : 'Lebanon',
-	'LS' : 'Lesotho',
-	'LR' : 'Liberia',
-	'LY' : 'Libyan Arab Jamahiriya',
-	'LI' : 'Liechtenstein',
-	'LT' : 'Lithuania',
-	'LU' : 'Luxembourg',
-	'MO' : 'Macao',
-	'MK' : 'Macedonia',
-	'MG' : 'Madagascar',
-	'MW' : 'Malawi',
-	'MY' : 'Malaysia',
-	'MV' : 'Maldives',
-	'ML' : 'Mali',
-	'MT' : 'Malta',
-	'MH' : 'Marshall Islands',
-	'MQ' : 'Martinique',
-	'MR' : 'Mauritania',
-	'MU' : 'Mauritius',
-	'YT' : 'Mayotte',
-	'MX' : 'Mexico',
-	'FM' : 'Micronesia, Federated States Of',
-	'MD' : 'Moldova',
-	'MC' : 'Monaco',
-	'MN' : 'Mongolia',
-	'ME' : 'Montenegro',
-	'MS' : 'Montserrat',
-	'MA' : 'Morocco',
-	'MZ' : 'Mozambique',
-	'MM' : 'Myanmar',
-	'NA' : 'Namibia',
-	'NR' : 'Nauru',
-	'NP' : 'Nepal',
-	'NL' : 'Netherlands',
-	'AN' : 'Netherlands Antilles',
-	'NC' : 'New Caledonia',
-	'NZ' : 'New Zealand',
-	'NI' : 'Nicaragua',
-	'NE' : 'Niger',
-	'NG' : 'Nigeria',
-	'NU' : 'Niue',
-	'NF' : 'Norfolk Island',
-	'MP' : 'Northern Mariana Islands',
-	'NO' : 'Norway',
-	'OM' : 'Oman',
-	'PK' : 'Pakistan',
-	'PW' : 'Palau',
-	'PS' : 'Palestinian Territory, Occupied',
-	'PA' : 'Panama',
-	'PG' : 'Papua New Guinea',
-	'PY' : 'Paraguay',
-	'PE' : 'Peru',
-	'PH' : 'Philippines',
-	'PN' : 'Pitcairn',
-	'PL' : 'Poland',
-	'PT' : 'Portugal',
-	'PR' : 'Puerto Rico',
-	'QA' : 'Qatar',
-	'RE' : 'Reunion',
-	'RO' : 'Romania',
-	'RU' : 'Russian Federation',
-	'RW' : 'Rwanda',
-	'BL' : 'Saint Barthelemy',
-	'SH' : 'Saint Helena',
-	'KN' : 'Saint Kitts And Nevis',
-	'LC' : 'Saint Lucia',
-	'MF' : 'Saint Martin',
-	'PM' : 'Saint Pierre And Miquelon',
-	'VC' : 'Saint Vincent And Grenadines',
-	'WS' : 'Samoa',
-	'SM' : 'San Marino',
-	'ST' : 'Sao Tome And Principe',
-	'SA' : 'Saudi Arabia',
-	'SN' : 'Senegal',
-	'RS' : 'Serbia',
-	'SC' : 'Seychelles',
-	'SL' : 'Sierra Leone',
-	'SG' : 'Singapore',
-	'SK' : 'Slovakia',
-	'SI' : 'Slovenia',
-	'SB' : 'Solomon Islands',
-	'SO' : 'Somalia',
-	'ZA' : 'South Africa',
-	'GS' : 'South Georgia And Sandwich Isl.',
-	'ES' : 'Spain',
-	'LK' : 'Sri Lanka',
-	'SD' : 'Sudan',
-	'SR' : 'Suriname',
-	'SJ' : 'Svalbard And Jan Mayen',
-	'SZ' : 'Swaziland',
-	'SE' : 'Sweden',
-	'CH' : 'Switzerland',
-	'SY' : 'Syrian Arab Republic',
-	'TW' : 'Taiwan',
-	'TJ' : 'Tajikistan',
-	'TZ' : 'Tanzania',
-	'TH' : 'Thailand',
-	'TL' : 'Timor-Leste',
-	'TG' : 'Togo',
-	'TK' : 'Tokelau',
-	'TO' : 'Tonga',
-	'TT' : 'Trinidad And Tobago',
-	'TN' : 'Tunisia',
-	'TR' : 'Turkey',
-	'TM' : 'Turkmenistan',
-	'TC' : 'Turks And Caicos Islands',
-	'TV' : 'Tuvalu',
-	'UG' : 'Uganda',
-	'UA' : 'Ukraine',
-	'AE' : 'United Arab Emirates',
-	'GB' : 'United Kingdom',
-	'US' : 'United States',
-	'UM' : 'United States Outlying Islands',
-	'UY' : 'Uruguay',
-	'UZ' : 'Uzbekistan',
-	'VU' : 'Vanuatu',
-	'VE' : 'Venezuela',
-	'VN' : 'Viet Nam',
-	'VG' : 'Virgin Islands, British',
-	'VI' : 'Virgin Islands, U.S.',
-	'WF' : 'Wallis And Futuna',
-	'EH' : 'Western Sahara',
-	'YE' : 'Yemen',
-	'ZM' : 'Zambia',
-	'ZW' : 'Zimbabwe'
+  'AF' : 'Afghanistan',
+  'AX' : 'Aland Islands',
+  'AL' : 'Albania',
+  'DZ' : 'Algeria',
+  'AS' : 'American Samoa',
+  'AD' : 'Andorra',
+  'AO' : 'Angola',
+  'AI' : 'Anguilla',
+  'AQ' : 'Antarctica',
+  'AG' : 'Antigua And Barbuda',
+  'AR' : 'Argentina',
+  'AM' : 'Armenia',
+  'AW' : 'Aruba',
+  'AU' : 'Australia',
+  'AT' : 'Austria',
+  'AZ' : 'Azerbaijan',
+  'BS' : 'Bahamas',
+  'BH' : 'Bahrain',
+  'BD' : 'Bangladesh',
+  'BB' : 'Barbados',
+  'BY' : 'Belarus',
+  'BE' : 'Belgium',
+  'BZ' : 'Belize',
+  'BJ' : 'Benin',
+  'BM' : 'Bermuda',
+  'BT' : 'Bhutan',
+  'BO' : 'Bolivia',
+  'BA' : 'Bosnia And Herzegovina',
+  'BW' : 'Botswana',
+  'BV' : 'Bouvet Island',
+  'BR' : 'Brazil',
+  'IO' : 'British Indian Ocean Territory',
+  'BN' : 'Brunei Darussalam',
+  'BG' : 'Bulgaria',
+  'BF' : 'Burkina Faso',
+  'BI' : 'Burundi',
+  'KH' : 'Cambodia',
+  'CM' : 'Cameroon',
+  'CA' : 'Canada',
+  'CV' : 'Cape Verde',
+  'KY' : 'Cayman Islands',
+  'CF' : 'Central African Republic',
+  'TD' : 'Chad',
+  'CL' : 'Chile',
+  'CN' : 'China',
+  'CX' : 'Christmas Island',
+  'CC' : 'Cocos (Keeling) Islands',
+  'CO' : 'Colombia',
+  'KM' : 'Comoros',
+  'CG' : 'Congo',
+  'CD' : 'Congo, Democratic Republic',
+  'CK' : 'Cook Islands',
+  'CR' : 'Costa Rica',
+  'CI' : 'Cote D\'Ivoire',
+  'HR' : 'Croatia',
+  'CU' : 'Cuba',
+  'CY' : 'Cyprus',
+  'CZ' : 'Czech Republic',
+  'DK' : 'Denmark',
+  'DJ' : 'Djibouti',
+  'DM' : 'Dominica',
+  'DO' : 'Dominican Republic',
+  'EC' : 'Ecuador',
+  'EG' : 'Egypt',
+  'SV' : 'El Salvador',
+  'GQ' : 'Equatorial Guinea',
+  'ER' : 'Eritrea',
+  'EE' : 'Estonia',
+  'ET' : 'Ethiopia',
+  'FK' : 'Falkland Islands (Malvinas)',
+  'FO' : 'Faroe Islands',
+  'FJ' : 'Fiji',
+  'FI' : 'Finland',
+  'FR' : 'France',
+  'GF' : 'French Guiana',
+  'PF' : 'French Polynesia',
+  'TF' : 'French Southern Territories',
+  'GA' : 'Gabon',
+  'GM' : 'Gambia',
+  'GE' : 'Georgia',
+  'DE' : 'Germany',
+  'GH' : 'Ghana',
+  'GI' : 'Gibraltar',
+  'GR' : 'Greece',
+  'GL' : 'Greenland',
+  'GD' : 'Grenada',
+  'GP' : 'Guadeloupe',
+  'GU' : 'Guam',
+  'GT' : 'Guatemala',
+  'GG' : 'Guernsey',
+  'GN' : 'Guinea',
+  'GW' : 'Guinea-Bissau',
+  'GY' : 'Guyana',
+  'HT' : 'Haiti',
+  'HM' : 'Heard Island & Mcdonald Islands',
+  'VA' : 'Holy See (Vatican City State)',
+  'HN' : 'Honduras',
+  'HK' : 'Hong Kong',
+  'HU' : 'Hungary',
+  'IS' : 'Iceland',
+  'IN' : 'India',
+  'ID' : 'Indonesia',
+  'IR' : 'Iran, Islamic Republic Of',
+  'IQ' : 'Iraq',
+  'IE' : 'Ireland',
+  'IM' : 'Isle Of Man',
+  'IL' : 'Israel',
+  'IT' : 'Italy',
+  'JM' : 'Jamaica',
+  'JP' : 'Japan',
+  'JE' : 'Jersey',
+  'JO' : 'Jordan',
+  'KZ' : 'Kazakhstan',
+  'KE' : 'Kenya',
+  'KI' : 'Kiribati',
+  'KR' : 'Korea',
+  'KW' : 'Kuwait',
+  'KG' : 'Kyrgyzstan',
+  'LA' : 'Lao People\'s Democratic Republic',
+  'LV' : 'Latvia',
+  'LB' : 'Lebanon',
+  'LS' : 'Lesotho',
+  'LR' : 'Liberia',
+  'LY' : 'Libyan Arab Jamahiriya',
+  'LI' : 'Liechtenstein',
+  'LT' : 'Lithuania',
+  'LU' : 'Luxembourg',
+  'MO' : 'Macao',
+  'MK' : 'Macedonia',
+  'MG' : 'Madagascar',
+  'MW' : 'Malawi',
+  'MY' : 'Malaysia',
+  'MV' : 'Maldives',
+  'ML' : 'Mali',
+  'MT' : 'Malta',
+  'MH' : 'Marshall Islands',
+  'MQ' : 'Martinique',
+  'MR' : 'Mauritania',
+  'MU' : 'Mauritius',
+  'YT' : 'Mayotte',
+  'MX' : 'Mexico',
+  'FM' : 'Micronesia, Federated States Of',
+  'MD' : 'Moldova',
+  'MC' : 'Monaco',
+  'MN' : 'Mongolia',
+  'ME' : 'Montenegro',
+  'MS' : 'Montserrat',
+  'MA' : 'Morocco',
+  'MZ' : 'Mozambique',
+  'MM' : 'Myanmar',
+  'NA' : 'Namibia',
+  'NR' : 'Nauru',
+  'NP' : 'Nepal',
+  'NL' : 'Netherlands',
+  'AN' : 'Netherlands Antilles',
+  'NC' : 'New Caledonia',
+  'NZ' : 'New Zealand',
+  'NI' : 'Nicaragua',
+  'NE' : 'Niger',
+  'NG' : 'Nigeria',
+  'NU' : 'Niue',
+  'NF' : 'Norfolk Island',
+  'MP' : 'Northern Mariana Islands',
+  'NO' : 'Norway',
+  'OM' : 'Oman',
+  'PK' : 'Pakistan',
+  'PW' : 'Palau',
+  'PS' : 'Palestinian Territory, Occupied',
+  'PA' : 'Panama',
+  'PG' : 'Papua New Guinea',
+  'PY' : 'Paraguay',
+  'PE' : 'Peru',
+  'PH' : 'Philippines',
+  'PN' : 'Pitcairn',
+  'PL' : 'Poland',
+  'PT' : 'Portugal',
+  'PR' : 'Puerto Rico',
+  'QA' : 'Qatar',
+  'RE' : 'Reunion',
+  'RO' : 'Romania',
+  'RU' : 'Russian Federation',
+  'RW' : 'Rwanda',
+  'BL' : 'Saint Barthelemy',
+  'SH' : 'Saint Helena',
+  'KN' : 'Saint Kitts And Nevis',
+  'LC' : 'Saint Lucia',
+  'MF' : 'Saint Martin',
+  'PM' : 'Saint Pierre And Miquelon',
+  'VC' : 'Saint Vincent And Grenadines',
+  'WS' : 'Samoa',
+  'SM' : 'San Marino',
+  'ST' : 'Sao Tome And Principe',
+  'SA' : 'Saudi Arabia',
+  'SN' : 'Senegal',
+  'RS' : 'Serbia',
+  'SC' : 'Seychelles',
+  'SL' : 'Sierra Leone',
+  'SG' : 'Singapore',
+  'SK' : 'Slovakia',
+  'SI' : 'Slovenia',
+  'SB' : 'Solomon Islands',
+  'SO' : 'Somalia',
+  'ZA' : 'South Africa',
+  'GS' : 'South Georgia And Sandwich Isl.',
+  'ES' : 'Spain',
+  'LK' : 'Sri Lanka',
+  'SD' : 'Sudan',
+  'SR' : 'Suriname',
+  'SJ' : 'Svalbard And Jan Mayen',
+  'SZ' : 'Swaziland',
+  'SE' : 'Sweden',
+  'CH' : 'Switzerland',
+  'SY' : 'Syrian Arab Republic',
+  'TW' : 'Taiwan',
+  'TJ' : 'Tajikistan',
+  'TZ' : 'Tanzania',
+  'TH' : 'Thailand',
+  'TL' : 'Timor-Leste',
+  'TG' : 'Togo',
+  'TK' : 'Tokelau',
+  'TO' : 'Tonga',
+  'TT' : 'Trinidad And Tobago',
+  'TN' : 'Tunisia',
+  'TR' : 'Turkey',
+  'TM' : 'Turkmenistan',
+  'TC' : 'Turks And Caicos Islands',
+  'TV' : 'Tuvalu',
+  'UG' : 'Uganda',
+  'UA' : 'Ukraine',
+  'AE' : 'United Arab Emirates',
+  'GB' : 'United Kingdom',
+  'US' : 'United States',
+  'UM' : 'United States Outlying Islands',
+  'UY' : 'Uruguay',
+  'UZ' : 'Uzbekistan',
+  'VU' : 'Vanuatu',
+  'VE' : 'Venezuela',
+  'VN' : 'Viet Nam',
+  'VG' : 'Virgin Islands, British',
+  'VI' : 'Virgin Islands, U.S.',
+  'WF' : 'Wallis And Futuna',
+  'EH' : 'Western Sahara',
+  'YE' : 'Yemen',
+  'ZM' : 'Zambia',
+  'ZW' : 'Zimbabwe'
 };
 
 function getCountryName(cc) {
-	return isoCountries.hasOwnProperty(cc) ? isoCountries[cc] : cc;
+  return isoCountries.hasOwnProperty(cc) ? isoCountries[cc] : cc;
 }
 
 var SICodes = [
-	[['AV','AZ'],'domestic, bilateral, multilateral use only, identifing RFID-tracked e-commerce items'],
-	[['BA','BZ'],'domestic, bilateral, multilateral use only'],
-	[['CA','CZ'],'Parcel post; the use of CZ requires bilateral agreement. It is not required to use CV for insured parcels but if the service indicator CV is used, then it is recommended that it be used only on insured parcels.'],
-	[['DA','DZ'],'for domestic, bilateral, multilateral use only'],
-	[['EA','EZ'],'EMS; the use of EX-EZ requires bilateral agreement'],
-	[['GA','GA'],'for domestic, bilateral, multilateral use only'],
-	[['GD','GD'],'for domestic, bilateral, multilateral use only'],
-	[['HA','HZ'],'e-commerce parcels; the use of HX-HY requires multilateral agreement; the use of HZ requires bilateral agreement'],
-	[['JA','JZ'],'reserved; cannot be assigned as valid service indicator values'],
-	[['KA','KZ'],'reserved; cannot be assigned as valid service indicator values'],
-	[['LA','LZ'],'Letter post express; the use of LZ requires bilateral agreement'],
-	[['MA','MZ'],'Letter post: M bags'],
-	[['NA','NZ'],'for domestic, bilateral, multilateral use only'],
-	[['PA','PZ'],'for domestic, bilateral, multilateral use only'],
-	[['QA','QM'],'Letter post: IBRS (International Business Reply Service)'],
-	[['RA','RZ'],'Letter post: registered, but not insured delivery. The use of RZ requires bilateral agreement.'],
-	[['SA','SZ'],'reserved; cannot be assigned as valid service indicator values'],
-	[['TA','TZ'],'reserved; cannot be assigned as valid service indicator values'],
-	[['UA','UZ'],'Letter post: items other than LA-LZ (Express), MA-MZ (M bags), QA-QM (IBRS), RA-RZ (registered), VA-VZ (insured), subject to customs control, i.e. bearing a CN 22 or CN 23'],
-	[['VA','VZ'],'Letter post insured; the use of VZ requires bilateral agreement'],
-	[['WA','WZ'],'reserved; cannot be assigned as valid service indicator values'],
-	[['ZA','ZZ'],'domestic, bilateral, multilateral use only'],
+  [['AV','AZ'],'domestic, bilateral, multilateral use only, identifing RFID-tracked e-commerce items'],
+  [['BA','BZ'],'domestic, bilateral, multilateral use only'],
+  [['CA','CZ'],'Parcel post; the use of CZ requires bilateral agreement. It is not required to use CV for insured parcels but if the service indicator CV is used, then it is recommended that it be used only on insured parcels.'],
+  [['DA','DZ'],'for domestic, bilateral, multilateral use only'],
+  [['EA','EZ'],'EMS; the use of EX-EZ requires bilateral agreement'],
+  [['GA','GA'],'for domestic, bilateral, multilateral use only'],
+  [['GD','GD'],'for domestic, bilateral, multilateral use only'],
+  [['HA','HZ'],'e-commerce parcels; the use of HX-HY requires multilateral agreement; the use of HZ requires bilateral agreement'],
+  [['JA','JZ'],'reserved; cannot be assigned as valid service indicator values'],
+  [['KA','KZ'],'reserved; cannot be assigned as valid service indicator values'],
+  [['LA','LZ'],'Letter post express; the use of LZ requires bilateral agreement'],
+  [['MA','MZ'],'Letter post: M bags'],
+  [['NA','NZ'],'for domestic, bilateral, multilateral use only'],
+  [['PA','PZ'],'for domestic, bilateral, multilateral use only'],
+  [['QA','QM'],'Letter post: IBRS (International Business Reply Service)'],
+  [['RA','RZ'],'Letter post: registered, but not insured delivery. The use of RZ requires bilateral agreement.'],
+  [['SA','SZ'],'reserved; cannot be assigned as valid service indicator values'],
+  [['TA','TZ'],'reserved; cannot be assigned as valid service indicator values'],
+  [['UA','UZ'],'Letter post: items other than LA-LZ (Express), MA-MZ (M bags), QA-QM (IBRS), RA-RZ (registered), VA-VZ (insured), subject to customs control, i.e. bearing a CN 22 or CN 23'],
+  [['VA','VZ'],'Letter post insured; the use of VZ requires bilateral agreement'],
+  [['WA','WZ'],'reserved; cannot be assigned as valid service indicator values'],
+  [['ZA','ZZ'],'domestic, bilateral, multilateral use only'],
 ];
 
 function getSICode(si) {
-	for (var i=0; i<SICodes.length; i++) {
-		var r = SICodes[i][0];
-		var desc = SICodes[i][1];
-		if (si>=r[0] && si<=r[1]) {
-			return r[0]+'-'+r[1]+' (' + desc +')';
-		}
-	}
-	return 'bad service indicator code';
+  for (var i=0; i<SICodes.length; i++) {
+    var r = SICodes[i][0];
+    var desc = SICodes[i][1];
+    if (si>=r[0] && si<=r[1]) {
+      return r[0]+'-'+r[1]+' (' + desc +')';
+    }
+  }
+  return 'bad service indicator code';
 }
 
 
 function csum(sn) {
-	var s = 0;
-	var weight = [8, 6, 4, 2, 3, 5, 9, 7];
-	for (var i=0; i<weight.length; i++) s += weight[i] * parseInt(sn[i]);
-	var cs = 11 - (s % 11);
-	return cs==10 ? 0 : cs==11 ? 5 : cs;
+  var s = 0;
+  var weight = [8, 6, 4, 2, 3, 5, 9, 7];
+  for (var i=0; i<weight.length; i++) s += weight[i] * parseInt(sn[i]);
+  var cs = 11 - (s % 11);
+  return cs==10 ? 0 : cs==11 ? 5 : cs;
 }
 
 function gen_fake_serial() {
-	var s = '';
-	for (var i=0; i<8; i++) s += Math.floor(Math.random()*10);
-	return s + csum(s);
+  var s = '';
+  for (var i=0; i<8; i++) s += Math.floor(Math.random()*10);
+  return s + csum(s);
 }
 
 function verify() {
-	var lines = document.getElementById("textarea").value.split('\n');
-	var out = '';
-	var errors = 0;
-	for (var i=0; i<lines.length; i++) {
-		s = lines[i];
-		if (s) {
-			var error = '';
-			var info = '';
-			var m = /^([A-Z]{2})(\d{8})(\d)([A-Z]{2})$/g.exec(s) || [];
-			if (!m.length) {
-				error = 'Wrong format, must be SI (2 chars) + SN (8 digits) + CS (1 digit) + CC (2 chars)';
-			} else {
-				var si = m[1];
-				var sn = m[2];
-				var cs = m[3];
-				var cc = m[4];
-				var csReal = csum(sn);
-				if (csReal != cs) {
-					error = 'Wrong Checksum (last digit is ' + cs + ', must be ' + csReal +')';
-				}
-				var cName = getCountryName(cc);
-				info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
-			}
-			out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
-			if (error) errors++;
-		}
-	}
-	document.getElementById("info").innerHTML = out;
-	var e = document.getElementById("verify");
-	e.style.display = 'inherit';
-	e.className = e.className.replace( /red|green/g, errors ? 'red':'green');
+  var lines = document.getElementById("textarea").value.split('\n');
+  var out = '';
+  var errors = 0;
+  for (var i=0; i<lines.length; i++) {
+    s = lines[i];
+    if (s) {
+      var error = '';
+      var info = '';
+      var m = /^([A-Z]{2})(\d{8})(\d)([A-Z]{2})$/g.exec(s) || [];
+      if (!m.length) {
+        error = 'Wrong format, must be SI (2 chars) + SN (8 digits) + CS (1 digit) + CC (2 chars)';
+      } else {
+        var si = m[1];
+        var sn = m[2];
+        var cs = m[3];
+        var cc = m[4];
+        var csReal = csum(sn);
+        if (csReal != cs) {
+          error = 'Wrong Checksum (last digit is ' + cs + ', must be ' + csReal +')';
+        }
+        var cName = getCountryName(cc);
+        info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
+      }
+      out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
+      if (error) errors++;
+    }
+  }
+  document.getElementById("info").innerHTML = out;
+  var e = document.getElementById("verify");
+  e.style.display = 'inherit';
+  e.className = e.className.replace( /red|green/g, errors ? 'red':'green');
 }
 
 function generate() {
-	var n = parseInt(document.getElementById("n").value);
-	var cc = document.getElementById("cc").value;
-	var si = document.getElementById("si").value;
-	var s = '';
-	for (var i=0; i<n; i++) s += si + gen_fake_serial() + cc + '\n';
-	document.getElementById("textarea").value = s;
+  var n = parseInt(document.getElementById("n").value);
+  var cc = document.getElementById("cc").value;
+  var si = document.getElementById("si").value;
+  var s = '';
+  for (var i=0; i<n; i++) s += si + gen_fake_serial() + cc + '\n';
+  document.getElementById("textarea").value = s;
 }
 
 function select() {
-	var e = document.getElementById("services");
-	var key = e.options[e.selectedIndex].value;
-	document.getElementById("cc").value = services[key][0];
-	document.getElementById("si").value = services[key][1][0];
+  var e = document.getElementById("services");
+  var key = e.options[e.selectedIndex].value;
+  document.getElementById("cc").value = services[key][0];
+  document.getElementById("si").value = services[key][1][0];
 }
 
 function load() {
-	var e = document.getElementById("services");
-	for (var key in services) {
-		var option = document.createElement("option");
-		option.text = key;
-		e.add(option);
-	}
-	select();
-	var param = location.hash ? location.hash.slice(1) : '';
-	if (param) {
-		document.getElementById("textarea").value = param;
-		verify();
-	}
+  var e = document.getElementById("services");
+  for (var key in services) {
+    var option = document.createElement("option");
+    option.text = key;
+    e.add(option);
+  }
+  select();
+  var param = location.hash ? location.hash.slice(1) : '';
+  if (param) {
+    document.getElementById("textarea").value = param;
+    verify();
+  }
 }
 
 </script>
@@ -410,6 +410,8 @@ function load() {
     <div class="w3-container"><textarea class="w3-input w3-border" id="textarea" cols=30 rows=15 autofocus></textarea></div>
   </div>
 </div>
+
+<a href="https://github.com/joric/tracking" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
 </body>
 </html>
