@@ -362,7 +362,7 @@ function verify() {
       if (!error) {
         let sn = m[2];
         let msg = getSignature(sn);
-        info += ` signature: "${msg}"`;
+        info += `, Signature: ${msg}`;
       }
 
       out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
