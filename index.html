@@ -300,6 +300,25 @@ function getSICode(si) {
   return 'bad service indicator code';
 }
 
+const fingerprint = 0xdeadbeef;
+const maxSalt = 1024;
+
+function lcg(seed) {
+  return () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 2**32;
+}
+
+function genSerial(salt = Math.floor(Math.random() * maxSalt)) {
+  const seed = (fingerprint ^ salt) >>> 0;
+  const rng = lcg(seed);
+  return { serial: Array.from({ length: 8 }, () => Math.floor(rng() * 10)).join(''), salt };
+}
+
+function verifySerial(serial) {
+  for (let salt = 0; salt < maxSalt; salt++) {
+    if (genSerial(salt).serial === serial) return salt;
+  }
+  return null;
+}
 
 function csum(sn) {
   var s = 0;
@@ -310,8 +329,7 @@ function csum(sn) {
 }
 
 function gen_fake_serial() {
-  var s = '';
-  for (var i=0; i<8; i++) s += Math.floor(Math.random()*10);
+  let s = genSerial().serial;
   return s + csum(s);
 }
 
@@ -339,6 +357,15 @@ function verify() {
         var cName = getCountryName(cc);
         info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
       }
+
+      if (!error) {
+        let sn = m[2];
+        let salt = verifySerial(sn);
+        if (salt) {
+          error = 'Fake number (salt '+ salt +')';
+        }
+      }
+
       out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
       if (error) errors++;
     }
