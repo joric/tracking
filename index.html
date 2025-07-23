@@ -352,7 +352,8 @@ function verify() {
         var cc = m[4];
         var csReal = csum(sn);
         if (csReal != cs) {
-          error = 'Wrong Checksum (last digit is ' + cs + ', must be ' + csReal +')';
+          //error = 'Wrong Checksum (last digit is ' + cs + ', must be ' + csReal +')';
+          error = 'Wrong Checksum';
         }
         var cName = getCountryName(cc);
         info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
