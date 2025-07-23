@@ -300,25 +300,24 @@ function getSICode(si) {
   return 'bad service indicator code';
 }
 
-const fingerprint = 0xdeadbeef;
-const maxSalt = 1024;
+const embedSignature = (serial, sig) => {
+    const MOD = 26**4;
+    const sigNum = [...sig].reduce((num, char) => num * 26 + char.charCodeAt(0) - 97, 0);
+    const originalNum = parseInt(serial, 10);
+    const result = originalNum - (originalNum % MOD) + sigNum;
+    return result.toString().padStart(8, '0');
+};
 
-function lcg(seed) {
-  return () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 2**32;
-}
-
-function genSerial(salt = Math.floor(Math.random() * maxSalt)) {
-  const seed = (fingerprint ^ salt) >>> 0;
-  const rng = lcg(seed);
-  return { serial: Array.from({ length: 8 }, () => Math.floor(rng() * 10)).join(''), salt };
-}
-
-function verifySerial(serial) {
-  for (let salt = 0; salt < maxSalt; salt++) {
-    if (genSerial(salt).serial === serial) return salt;
-  }
-  return null;
-}
+const getSignature = (serial) => {
+    const MOD = 26**4;
+    let sigNum = parseInt(serial, 10) % MOD;
+    let signature = '';
+    for (let i = 0; i < 4; i++) {
+        signature = String.fromCharCode(97 + (sigNum % 26)) + signature;
+        sigNum = Math.floor(sigNum / 26);
+    }
+    return signature;
+};
 
 function csum(sn) {
   var s = 0;
@@ -329,7 +328,8 @@ function csum(sn) {
 }
 
 function gen_fake_serial() {
-  let s = genSerial().serial;
+  let s = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10)).join('');
+  s = embedSignature(s, 'fake');
   return s + csum(s);
 }
 
@@ -361,10 +361,8 @@ function verify() {
 
       if (!error) {
         let sn = m[2];
-        let salt = verifySerial(sn);
-        if (salt) {
-          error = 'Fake number (salt '+ salt +')';
-        }
+        let msg = getSignature(sn);
+        info += ` signature: "${msg}"`;
       }
 
       out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
