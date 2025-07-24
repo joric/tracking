@@ -357,18 +357,17 @@ function verify() {
         }
         var cName = getCountryName(cc);
         info = cName==cc ? (' unknown country '+cc+', probably fake') : (' Country: '+ cName + ', SI Code: ' + getSICode(si));
-      }
 
-      if (!error) {
-        let sn = m[2];
         let msg = getSignature(sn);
         info += `, Signature: ${msg}`;
       }
-
       out += s + ' <a target=_blank href="#'+s+'">'+(error ? error : 'Checksum OK') + '</a> '+info+'<br/>\n';
       if (error) errors++;
     }
   }
+  
+  if (!out) return;
+
   document.getElementById("info").innerHTML = out;
   var e = document.getElementById("verify");
   e.style.display = 'inherit';
